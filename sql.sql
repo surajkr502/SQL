@@ -948,3 +948,78 @@ it provides same number of output rows.
 It takes multiple input rows but in output it provides the 
 output
 
+
+-- 15th class
+select * from empoyees;
+select * , rank()over(order by salary desc)as Ranks
+from employees;
+select *,percent_rank()over(order by salary desc) as Ranks 
+from employees;
+
+select *,ntile(4)over(order by salary desc) as Ranks 
+from employees;
+
+select *,row_number()over(order by salary desc) as 
+Unique_Sequantial_Order
+from employees;
+-- Now we use Partition by
+select *,rank()over(partition by department 
+order by salary desc) as Ranks 
+from employees;
+
+-- Windows Aggregates function 
+select *,sum(salary)over(order by salary desc) as salary 
+from employees;
+
+select *,avg(salary) over(order by salary desc) as salary 
+from employees;
+
+select *,min(salary)over(order by salary desc) as salary
+from employees;
+
+select *,max(salary)over(order by salary desc) as salary
+from employees;
+
+select *,count(salary)over(order by salary desc) as salary
+from employees;
+-- Values windows functions
+select * ,lead(salary) over(order by salary desc) as salary 
+from employees;
+
+select *,lag(salary)over(order by salary desc) as salary
+from employees;
+
+select *,first_value(salary)over(order by salary desc) as salary
+from employees;
+
+select *,last_value(salary)over(order by salary desc) as salary
+from employees;
+
+-- windows fn takes n no. of input rows and provide n no. of 
+/*output rows . The input rows and 
+
+its works at row label provide the output for each rows 
+so, we can say the windows is create for each row. 
+In the query 
+if the over clouse given then we will decide that it is window fn 
+windows fns are categoriase into three types 
+1. Rank
+2. Aggregate windows fn 
+3. Values fn
+The rank fn in the condition of 
+where the dense fn always provide the uniqu sequantial no. 
+and divide the 
+percent ranks provide 
+rank -1/(no. of rows-1)
+Its works for normal distribution data.
+In the value fn the lead fn gives the coming values where the lag fn give the last values
+the first value gives the first values of the column where the last value provides the last 
+value of the data on the basic of partition.
+Its all aggregate fn works on the row label 
+If i perform the minimum It don't find the 
+it find row by row
+
+Over(): Its an identity fn of window fn 
+Order by : In which column we are to perform the fn operation
+partition in window fn the used it 
+*/
