@@ -149,7 +149,7 @@ alter table sales rename column product to prod;
 alter table sales rename column prod to product;
 /* SQL in an declarative lang not a procedural lang
 declarative lang means in sql we just tall the need to the database 
-but in procedural lang complete process is defined stop by step which deon't happen in sql
+but in procedural lang complete process is defined step by step which deon't happen in sql
 */
 -- Truncate is used to supresed the the table
 truncate sales;
@@ -1023,3 +1023,47 @@ Over(): Its an identity fn of window fn
 Order by : In which column we are to perform the fn operation
 partition in window fn the used it 
 */
+
+
+
+
+-- second class
+-- This query is used to see the tables in active database 
+show tables;
+-- It describe the table column headers with its attribute 
+desc customers;
+-- It give by default databases in the schema
+show databases;
+/* sql is a declarative lang because under it we give the order or requirment and it displays the output 
+it is not a procedural lang
+*/
+desc customers;
+/* To make any output permanentaly visible in the result grid 
+We do the pin tab by right click over the result 
+*/
+insert into customers values
+(1,'AA','BB','2001-01-01'),
+(2,'CC','DD','2002-01-01'),
+(3,'EE','FF','2003-01-01'),
+(4,'GG','HH','2004-01-01'),
+(5,'II','JJ','2005-01-01');
+
+select * from customers;
+
+select customer_name from customers;
+
+select customer_ID,customer_name from customers;
+
+-- My sql is Open source because we can freely download in the system
+
+-- Class test
+create database A;
+use A;
+create table B;
+insert into B values
+(1,'AA','BB','2001-01-01','50,000'),
+(2,'CC','DD','2002-01-01','50,000'),
+(3,'EE','FF','2003-01-01','50,000'),
+(4,'GG','HH','2004-01-01','50,000'),
+(5,'II','JJ','2005-01-01','50,000');
+
