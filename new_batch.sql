@@ -236,7 +236,41 @@ group by product
 order by sum(quantity) desc;
 
 select product, sum(price) from sales
-group by product 
+group by  
 having sum(price) > 100000;
 show tables;
 
+create database e;
+use e;
+create table f
+(cus_id int , cud_name varchar(20)
+);
+
+create table g
+(cus_id int , cud_name varchar(20)
+);
+insert into g values
+(1,'AA'),
+(2,'BB'),
+(3,'CC');
+insert into g values
+(4,'DD');
+select * from g;
+rollback;
+set autocommit=0;
+commit;
+insert into g values
+(5,'DD');
+rollback;
+
+insert into g values
+(6,'EE');
+rollback;
+commit;
+select * from g;
+
+savepoint sp1;
+insert into g values
+(7,'FF');
+rollback;
+select * from g;
