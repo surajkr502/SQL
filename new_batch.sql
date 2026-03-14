@@ -109,18 +109,7 @@ order by
 limit
 offset
 */
-
-
-
-
-
-
-
-
-
-
-
-
+-- Class 
 -- Create Database
 CREATE DATABASE join_practice_db;
 USE join_practice_db;
